@@ -6,7 +6,7 @@ type Props = {};
 
 function SettingsButton({}: Props) {
   return (
-    <Button className="">
+    <Button className="bg-transparent">
       <IoSettingsOutline className="h-5 w-5 hover:scale-125" />
     </Button>
   );

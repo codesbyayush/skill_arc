@@ -1,13 +1,13 @@
-import type { Config } from "tailwindcss"
+import type { Config } from "tailwindcss";
 
 const config = {
   darkMode: ["class"],
   content: [
-    './pages/**/*.{ts,tsx}',
-    './components/**/*.{ts,tsx}',
-    './app/**/*.{ts,tsx}',
-    './src/**/*.{ts,tsx}',
-	],
+    "./pages/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}",
+    "./app/**/*.{ts,tsx}",
+    "./src/**/*.{ts,tsx}",
+  ],
   prefix: "",
   theme: {
     container: {
@@ -52,9 +52,9 @@ const config = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        backgroundLeetcode: "hsl(var(--custom-background-leetcode))",
-        blackLeetcode: "hsl(var(--custom-black-leetcode))",
-        lightBlackLeetcode: "hsl(var(--custom-light-black-leetcode))",
+        darkGray: "hsl(var(--custom-background-leetcode))",
+        backgroundBlack: "hsl(var(--custom-black-leetcode))",
+        lightGray: "hsl(var(--custom-light-black-leetcode))",
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -78,6 +78,7 @@ const config = {
     },
   },
   plugins: [require("@tailwindcss/container-queries")],
-} satisfies Config
+} satisfies Config;
 
-export default config
+export default config;
+

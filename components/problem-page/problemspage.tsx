@@ -4,10 +4,10 @@ import {
   ResizablePanelGroup,
 } from "@/components/ui/resizable";
 import ProblemStatement from "@/components/problem-page/problem-statement";
-import DescriptionFooter from "./description-footer";
-import CodePresenter from "./code-presenter";
-import Testcases from "./testcases";
-import { Button } from "../ui/button";
+import DescriptionFooter from "@/components/problem-page/problem-desc-ui/description-footer";
+import CodeEditor from "@/components/problem-page/code-editor";
+import { Button } from "@/components/ui/button";
+import OpenedTab from "@/components/problem-page/opened-tab-manager";
 
 export default function ProblemsPage() {
   return (
@@ -17,15 +17,15 @@ export default function ProblemsPage() {
     >
       <ResizablePanel defaultSize={35}>
         <div className="flex h-full justify-center  flex-col gap-y-1 rounded">
-          <p className="px-2 py-2.5 bg-lightBlackLeetcode rounded">
-            <span className="font-semibold px-4 py-2 bg-backgroundLeetcode rounded w-min">
+          <p className="px-2 py-1 bg-lightGray rounded">
+            <Button className="font-semibold px-4 py-1.5 bg-darkGray rounded w-min">
               Description
-            </span>
+            </Button>
           </p>
           <ProblemStatement />
-          <div className="rounded bg-backgroundLeetcode py-2">
+          {/* <div className="rounded bg-darkGray py-2">
             <DescriptionFooter />
-          </div>
+          </div> */}
         </div>
       </ResizablePanel>
       <ResizableHandle withHandle />
@@ -33,33 +33,24 @@ export default function ProblemsPage() {
         <ResizablePanelGroup direction="vertical" className="gap-2 ">
           <ResizablePanel defaultSize={80}>
             <div className="flex h-full justify-center  flex-col gap-y-1 rounded overflow-hidden">
-              <p className="px-2 py-2.5 bg-lightBlackLeetcode rounded">
-                <span className="font-semibold px-4 py-2 bg-backgroundLeetcode rounded w-min">
+              <div className="px-2 py-1 bg-lightGray rounded flex gap-2">
+                <Button
+                  className="font-semibold px-4 py-1.5 bg-darkGray rounded w-min"
+                >
                   Code
-                </span>
-              </p>
-              <div className="h-full w-full bg-backgroundLeetcode rounded overflow-y-scroll scrollbar-hide relative">
-                <CodePresenter />
-                <div className="absolute bottom-0 right-0 flex gap-2 flex-wrap py-1 px-1">
-                  <Button className="bg-lightBlackLeetcode hover:bg-blackLeetcode/50">Run</Button>
-                  <Button className="bg-emerald-500 hover:bg-emerald-800">Submit</Button>
-                </div>
+                </Button>
+              </div>
+              <div className="h-full w-full bg-darkGray rounded overflow-y-scroll scrollbar-hide relative">
+                <CodeEditor />
               </div>
             </div>
           </ResizablePanel>
 
           <ResizableHandle />
 
-          <ResizablePanel defaultSize={20}>
-            <div className="flex h-full justify-center  flex-col gap-y-1 rounded overflow-hidden">
-              <p className="px-2 py-2.5 bg-lightBlackLeetcode rounded">
-                <span className="font-semibold px-4 py-2 bg-backgroundLeetcode rounded w-min">
-                  Testcases
-                </span>
-              </p>
-              <div className="h-full w-full px-4 py-6 bg-backgroundLeetcode rounded overflow-y-scroll scrollbar-hide min-h-0">
-                <Testcases />
-              </div>
+          <ResizablePanel defaultSize={20} minSize={6}>
+            <div className="flex h-full justify-center flex-col gap-y-1 rounded overflow-hidden min-h-0">
+              <OpenedTab />
             </div>
           </ResizablePanel>
         </ResizablePanelGroup>

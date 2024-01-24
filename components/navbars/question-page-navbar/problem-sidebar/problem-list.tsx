@@ -4,6 +4,7 @@ import * as React from "react";
 
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Separator } from "@/components/ui/separator";
+import { cn } from "@/lib/utils";
 
 function ProblemsList() {
   return (
@@ -17,9 +18,6 @@ function ProblemsList() {
 
 export default ProblemsList;
 
-
-
-
 const tags = Array.from({ length: 50 }).map(
   (_, i, a) => `v1.2.0-beta.${a.length - i}`
 );
@@ -29,10 +27,12 @@ export function Problems() {
     <ScrollArea className="h-full w-full rounded-md border">
       {tags.map((tag, i) => (
         <>
-          <Link href={"/problems/twosum"} className="border-b-white/15">
-            <Button asChild>
-              <div className="flex justify-between w-full items-center rounded-none hover:bg-lightBlackLeetcode bg-lightBlackLeetcode/15 gap-4 py-6 text-sm">
-                <span className="truncate text-xs max-w-[60%]">{i+1}. Two Sum</span>
+          <Link href={"/problems/twosum"} className="border-b-white/5">
+            <Button asChild className="flex items-center">
+              <div className={`flex justify-between w-full items-center rounded-none hover:bg-white/50 gap-4 py-6 text-sm ${i === 0 ? 'bg-white/25' : 'bg-transparent'}`}>
+                <span className='truncate text-xs max-w-[60%]'>
+                  {i + 1}. Two Sum
+                </span>
                 <span>Easy</span>
               </div>
             </Button>
@@ -43,7 +43,3 @@ export function Problems() {
     </ScrollArea>
   );
 }
-
-
-
-
