@@ -27,7 +27,7 @@ export function Problems() {
     <ScrollArea className="h-full w-full rounded-md border">
       {tags.map((tag, i) => (
         <>
-          <Link href={"/problems/twosum"} className="border-b-white/5">
+          <Link href={"/problems/twosum"} className="border-b-white/5" key={tag+i}>
             <Button asChild className="flex items-center">
               <div className={`flex justify-between w-full items-center rounded-none hover:bg-white/50 gap-4 py-6 text-sm ${i === 0 ? 'bg-white/25' : 'bg-transparent'}`}>
                 <span className='truncate text-xs max-w-[60%]'>

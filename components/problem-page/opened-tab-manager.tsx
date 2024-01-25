@@ -6,7 +6,7 @@ import CodeEditor from "@/components/problem-page/code-editor";
 import SubmissionResult from "./submission-result";
 import Testcases from "./problem-desc-ui/testcases";
 
-function OpenedTab() {
+function OpenedTab({ testcase }: { testcase: string }) {
   const [isResultDisplayed, setIsResultDisplayed] = useState(false);
   return (
     <>
@@ -25,7 +25,11 @@ function OpenedTab() {
         </Button>
       </div>
       <div className="h-full w-full px-4 bg-darkGray rounded overflow-y-scroll scrollbar-hide min-h-0">
-        {isResultDisplayed ? <SubmissionResult /> : <Testcases />}
+        {isResultDisplayed ? (
+          <SubmissionResult />
+        ) : (
+          <Testcases testcase={testcase} />
+        )}
       </div>
     </>
   );

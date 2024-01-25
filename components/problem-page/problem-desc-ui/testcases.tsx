@@ -1,11 +1,37 @@
-import React from "react";
-import { Button } from "@/components/ui/button";
+"use client";
 
+import { Textarea } from "@/components/ui/textarea";
+import { useResultStore } from "@/store/zustand";
+import { useEffect } from "react";
 
-function Testcases() {
+function Testcases({ testcase } : {testcase? : string}) {
+  
+  const { testcases, updateTestcases} = useResultStore();
+  useEffect(() => {
+    updateTestcases(testcase || '')
+  },[])
+
   return (
     <>
-      <div className="flex gap-2 flex-wrap py-6">
+      <div className=" rounded-lg py-4">
+        <p className="py-4 font-semibold text-xl">Edit for custom testcases</p>
+        <Textarea
+          placeholder="Enter your custom testcase here"
+          className="resize-y min-h-40 text-lg font-medium"
+          value={testcases}
+          onChange={(e) => updateTestcases(e.target.value)}
+        />
+      </div>
+
+      
+    </>
+  );
+}
+
+export default Testcases;
+
+
+  /* <div className="flex gap-2 flex-wrap py-6">
         <Button className="bg-lightGray brightness-125 hover:brightness-90 hover:bg-lightGray">
           Case 1
         </Button>
@@ -28,9 +54,4 @@ function Testcases() {
           <p>target</p>
           <p className="bg-lightGray px-4 py-1.5 rounded">9</p>
         </div>
-      </div>
-    </>
-  );
-}
-
-export default Testcases;
+      </div> */
