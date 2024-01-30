@@ -58,7 +58,7 @@ export const columns: ColumnDef<Task>[] = [
       return (
         <div className="flex w-[100px] items-center">
           {status.icon && (
-            <status.icon className="mr-2 h-4 w-4 text-muted-foreground" />
+            <status.icon className={`mr-2 h-6 w-6 text-muted-foreground ${status.color}`} />
           )}
           {/* <span>{status.label}</span> */}
         </div>
@@ -77,12 +77,12 @@ export const columns: ColumnDef<Task>[] = [
     ),
     cell: ({ row }) => {
       // const label = labels.find((label) => label.value === row.original.label);
-
+      
       return (
-        <Link href='/'>
-          <div className="flex space-x-2 hover:text-blue-700">
+        <Link href={`/problems/${row.id}`}>
+          <div className="flex space-x-2 hover:text-blue-300">
             {/* {label && <Badge variant="outline">{label.label}</Badge>} */}
-            <span className="max-w-[500px] truncate font-medium">
+            <span className="max-w-[500px] truncate font-medium text-lg">
               {row.getValue("title")}
             </span>
           </div>
@@ -99,20 +99,30 @@ export const columns: ColumnDef<Task>[] = [
       <DataTableColumnHeader column={column} title="Difficulty" />
     ),
     cell: ({ row }) => {
-      const difficulties = difficulty.find(
+      let difficulties = difficulty.find(
         (difficulty) => difficulty.value === row.getValue("difficulty")
       );
 
       if (!difficulties) {
-        return null;
+        // return null;
+        difficulties = {
+          color: 'text-emerald-500',
+          label: 'Easy',
+          value: 'easy',
+          numVal: 1,
+        }
       }
 
       return (
         <div className="flex items-center">
-          {difficulties.icon && (
-            <difficulties.icon className="mr-2 h-4 w-4 text-muted-foreground" />
-          )}
-          <span>{difficulties.label}</span>
+          {/* {difficulties.icon && (
+            <difficulties.icon
+              className="mr-2 h-4 w-4 text-muted-foreground"
+            />
+          )} */}
+          <span className={`${difficulties.color} text-lg`}>
+            {difficulties.label}
+          </span>
         </div>
       );
     },

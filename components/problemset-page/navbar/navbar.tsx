@@ -1,8 +1,9 @@
-import LogoButton from "@/components/navbars/question-page-navbar/logo-button";
+import LogoButton from "@/components/problem-page/navbar/logo-button";
 import { UserButton } from "@/components/auth/user-button";
-import StreakButton from "@/components/navbars/question-page-navbar/streak-button";
-import SettingsButton from "@/components/problem-page/settingsButton";
-import { Button } from '@/components/ui/button'
+import StreakButton from "@/components/problem-page/navbar/streak-button";
+import SettingsButton from "@/components/settings-button";
+import { Button } from "@/components/ui/button";
+import UserProfileButton from "../user-profile-button";
 
 function ProblemSetPageNavbar() {
   return (
@@ -15,10 +16,10 @@ function ProblemSetPageNavbar() {
         <Button className="bg-trnsparent hover:bg-white/15">Discuss</Button>
       </div>
       <div className="flex items-center justify-between gap-1">
-        <SettingsButton />
-        <StreakButton />
+        {/* <SettingsButton />
+        <StreakButton /> */}
         <div className="w-9 aspect-square place-content-center flex">
-          <UserButton />
+          <UserProfileButton />
         </div>
       </div>
     </div>

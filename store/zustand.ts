@@ -1,25 +1,34 @@
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
 
-type EditorStore = {
-  code: string;
-  update: (code: string) => void;
-};
 
-export const useEditorStore = create<EditorStore>()(
-  persist(
-    (set) => ({
-      code: `import java.util.*;
+export const starterCode = `import java.util.*;
 import java.lang.*;
 import java.io.*;
 
 class Main {
   public static void main(String[] args) {
-
-          //Enter your code here
+      //Enter your code here
     }
-}`,
-      update: (codes) => set(() => ({ code: codes })),
+}`
+
+
+type EditorStore = {
+  code: string;
+  question: string;
+  resetCode: () => void;
+  update: (code: string, id? : string) => void;
+};
+
+export const useEditorStore = create<EditorStore>()(
+  persist(
+    (set) => ({
+      code: starterCode,
+      question: '0',
+      resetCode: () => {
+        code: starterCode
+      },
+      update: (codes, id) => set(() => ({ code: codes, question: id })),
     }),
     { name: "previousCode" }
   )

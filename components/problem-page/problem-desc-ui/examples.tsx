@@ -1,12 +1,12 @@
 import { getProblem } from "@/actions/problem/get-problem";
 import { Separator } from "@/components/ui/separator";
 
-async function Examples() {
-  const { examples } = await getProblem("two-sum", 2);
+async function Examples( { examples }) {
 
   return (
     <div className="flex flex-col gap-3">
       {examples.map((example, index) => {
+        if(example?.input.length < 1) return null;
         return (
           <div key={examples.id}>
             <p className="font-semibold pb-2">Example {index + 1}:</p>
@@ -15,15 +15,15 @@ async function Examples() {
                 <span className="font-semibold text-base text-white">
                   Input :{" "}
                 </span>
-                <span> {example.inputText} </span>
-                {/* nums = [2,7,11,15], target = 9 */}
+                <span> {example.input} </span>
+               
               </p>
               <p className=" px-3 border-gray-500/90">
                 <span className="font-semibold text-base text-white">
                   Output :
                 </span>
-                <span> {example.outputText} </span>
-                {/* [0,1] */}
+                <span> {example.output} </span>
+              
               </p>
               {example.explanation && (
                 <p className=" px-3 border-gray-500/90">
@@ -31,7 +31,6 @@ async function Examples() {
                     Explanation :
                   </span>
                   <span> {example.explanation} </span>
-                  {/* Because nums[0] + nums[1] == 9, we return [0, 1]. */}
                 </p>
               )}
             </div>

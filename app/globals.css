@@ -7,7 +7,7 @@ body,
 :root {
   height: 100%;
 }
- 
+
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -15,63 +15,121 @@ body,
 
     --card: 0 0% 100%;
     --card-foreground: 222.2 84% 4.9%;
- 
+
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
- 
+
     --primary: 222.2 47.4% 11.2%;
     --primary-foreground: 210 40% 98%;
- 
+
     --secondary: 210 40% 96.1%;
     --secondary-foreground: 222.2 47.4% 11.2%;
- 
+
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
- 
+
     --accent: 210 40% 96.1%;
     --accent-foreground: 222.2 47.4% 11.2%;
- 
+
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
     --ring: 222.2 84% 4.9%;
- 
-    --radius: 0.5rem;
 
+    --radius: 0.5rem;
 
     --custom-background-leetcode: 0 0% 16%;
     --custom-black-leetcode: 0 0% 7%;
     --custom-light-black-leetcode: 0 0% 25%;
 
+    --custom-text-50: 52 92% 95%;
+    --custom-text-100: 52 92% 90%;
+    --custom-text-200: 52 92% 80%;
+    --custom-text-300: 52 92% 70%;
+    --custom-text-400: 52 92% 60%;
+    --custom-text-500: 52 92% 50%;
+    --custom-text-600: 52 92% 40%;
+    --custom-text-700: 52 92% 30%;
+    --custom-text-800: 52 92% 20%;
+    --custom-text-900: 52 92% 10%;
+    --custom-text-950: 52 92% 5%;
+
+    --custom-background-50: 0 0% 95%;
+    --custom-background-100: 0 0% 90%;
+    --custom-background-200: 0 0% 80%;
+    --custom-background-300: 0 0% 70%;
+    --custom-background-400: 0 0% 60%;
+    --custom-background-500: 0 0% 50%;
+    --custom-background-600: 0 0% 40%;
+    --custom-background-700: 0 0% 30%;
+    --custom-background-800: 0 0% 20%;
+    --custom-background-900: 0 0% 10%;
+    --custom-background-950: 0 0% 5%;
+
+    --custom-primary-50: 46 84% 95%;
+    --custom-primary-100: 46 84% 90%;
+    --custom-primary-200: 46 82% 80%;
+    --custom-primary-300: 46 83% 70%;
+    --custom-primary-400: 46 83% 60%;
+    --custom-primary-500: 46 83% 50%;
+    --custom-primary-600: 46 83% 40%;
+    --custom-primary-700: 46 83% 30%;
+    --custom-primary-800: 46 82% 20%;
+    --custom-primary-900: 46 84% 10%;
+    --custom-primary-950: 46 84% 5%;
+
+    --custom-secondary-50: 240 4% 95%;
+    --custom-secondary-100: 240 2% 90%;
+    --custom-secondary-200: 240 4% 80%;
+    --custom-secondary-300: 240 3% 70%;
+    --custom-secondary-400: 240 3% 60%;
+    --custom-secondary-500: 240 3% 50%;
+    --custom-secondary-600: 240 3% 40%;
+    --custom-secondary-700: 240 3% 30%;
+    --custom-secondary-800: 240 4% 20%;
+    --custom-secondary-900: 240 2% 10%;
+    --custom-secondary-950: 240 4% 5%;
+
+    --custom-accent-50: 53 69% 95%;
+    --custom-accent-100: 52 73% 90%;
+    --custom-accent-200: 52 73% 80%;
+    --custom-accent-300: 52 73% 70%;
+    --custom-accent-400: 52 72% 60%;
+    --custom-accent-500: 52 72% 50%;
+    --custom-accent-600: 52 72% 40%;
+    --custom-accent-700: 52 73% 30%;
+    --custom-accent-800: 52 73% 20%;
+    --custom-accent-900: 52 73% 10%;
+    --custom-accent-950: 50 69% 5%;
   }
- 
+
   .dark {
     --background: 222.2 84% 4.9%;
     --foreground: 210 40% 98%;
- 
+
     --card: 222.2 84% 4.9%;
     --card-foreground: 210 40% 98%;
- 
+
     --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
- 
+
     --primary: 210 40% 98%;
     --primary-foreground: 222.2 47.4% 11.2%;
- 
+
     --secondary: 217.2 32.6% 17.5%;
     --secondary-foreground: 210 40% 98%;
- 
+
     --muted: 217.2 32.6% 17.5%;
     --muted-foreground: 215 20.2% 65.1%;
- 
+
     --accent: 217.2 32.6% 17.5%;
     --accent-foreground: 210 40% 98%;
- 
+
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
- 
+
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
     --ring: 212.7 26.8% 83.9%;
@@ -80,10 +138,68 @@ body,
     --custom-black-leetcode: 0 0% 7%;
     --custom-light-black-leetcode: 0 0% 25%;
 
+    --custom-text-50: 52 92% 5%;
+    --custom-text-100: 52 92% 10%;
+    --custom-text-200: 52 92% 20%;
+    --custom-text-300: 52 92% 30%;
+    --custom-text-400: 52 92% 40%;
+    --custom-text-500: 52 92% 50%;
+    --custom-text-600: 52 92% 60%;
+    --custom-text-700: 52 92% 70%;
+    --custom-text-800: 52 92% 80%;
+    --custom-text-900: 52 92% 90%;
+    --custom-text-950: 52 92% 95%;
 
+    --custom-background-50: 0 0% 5%;
+    --custom-background-100: 0 0% 10%;
+    --custom-background-200: 0 0% 20%;
+    --custom-background-300: 0 0% 30%;
+    --custom-background-400: 0 0% 40%;
+    --custom-background-500: 0 0% 50%;
+    --custom-background-600: 0 0% 60%;
+    --custom-background-700: 0 0% 70%;
+    --custom-background-800: 0 0% 80%;
+    --custom-background-900: 0 0% 90%;
+    --custom-background-950: 0 0% 95%;
+
+    --custom-primary-50: 46 84% 5%;
+    --custom-primary-100: 46 84% 10%;
+    --custom-primary-200: 46 82% 20%;
+    --custom-primary-300: 46 83% 30%;
+    --custom-primary-400: 46 83% 40%;
+    --custom-primary-500: 46 83% 50%;
+    --custom-primary-600: 46 83% 60%;
+    --custom-primary-700: 46 83% 70%;
+    --custom-primary-800: 46 82% 80%;
+    --custom-primary-900: 46 84% 90%;
+    --custom-primary-950: 46 84% 95%;
+
+    --custom-secondary-50: 240 4% 5%;
+    --custom-secondary-100: 240 2% 10%;
+    --custom-secondary-200: 240 4% 20%;
+    --custom-secondary-300: 240 3% 30%;
+    --custom-secondary-400: 240 3% 40%;
+    --custom-secondary-500: 240 3% 50%;
+    --custom-secondary-600: 240 3% 60%;
+    --custom-secondary-700: 240 3% 70%;
+    --custom-secondary-800: 240 4% 80%;
+    --custom-secondary-900: 240 2% 90%;
+    --custom-secondary-950: 240 4% 95%;
+
+    --custom-accent-50: 50 69% 5%;
+    --custom-accent-100: 52 73% 10%;
+    --custom-accent-200: 52 73% 20%;
+    --custom-accent-300: 52 73% 30%;
+    --custom-accent-400: 52 72% 40%;
+    --custom-accent-500: 52 72% 50%;
+    --custom-accent-600: 52 72% 60%;
+    --custom-accent-700: 52 73% 70%;
+    --custom-accent-800: 52 73% 80%;
+    --custom-accent-900: 52 73% 90%;
+    --custom-accent-950: 53 69% 95%;
   }
 }
- 
+
 @layer base {
   * {
     @apply border-border;
@@ -93,17 +209,17 @@ body,
   }
 }
 
-*{
+* {
   min-width: 0;
 }
-body{
+body {
   height: 100vh;
 }
 
 .scrollbar-hide {
-  -ms-overflow-style: none;  /* Internet Explorer 10+ */
-  scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none; /* Firefox */
 }
-.scrollbar-hide::-webkit-scrollbar { 
-  display: none;  /* Safari and Chrome */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
 }

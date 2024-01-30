@@ -3,16 +3,15 @@ import {
   ResizablePanel,
   ResizablePanelGroup,
 } from "@/components/ui/resizable";
-import ProblemStatement from "@/components/problem-page/problem-statement";
-import DescriptionFooter from "@/components/problem-page/problem-desc-ui/description-footer";
-import CodeEditor from "@/components/problem-page/code-editor";
 import { Button } from "@/components/ui/button";
+import CodeEditor from "@/components/problem-page/code-editor";
+import ProblemStatement from "@/components/problem-page/problem-statement";
 import OpenedTab from "@/components/problem-page/opened-tab-manager";
-import { getProblem } from "@/actions/problem/get-problem";
+import { problems } from "@/testdata/all-problems";
 
-export default async function ProblemsPage() {
+export default async function ProblemsPage( { problem }: { problem : problems}) {
 
-  const problem = await getProblem('two-sum', 2);
+  
   
   return (
     <ResizablePanelGroup
@@ -26,7 +25,7 @@ export default async function ProblemsPage() {
               Description
             </Button>
           </p>
-          <ProblemStatement />
+          <ProblemStatement problem={problem}/>
           {/* <div className="rounded bg-darkGray py-2">
             <DescriptionFooter />
           </div> */}
@@ -58,7 +57,7 @@ export default async function ProblemsPage() {
 
           <ResizablePanel defaultSize={20} minSize={6}>
             <div className="flex h-full justify-center flex-col gap-y-1 rounded overflow-hidden min-h-0">
-              <OpenedTab testcase={problem?.testcase || ''}/>
+              <OpenedTab testcase={''}/>
             </div>
           </ResizablePanel>
         </ResizablePanelGroup>

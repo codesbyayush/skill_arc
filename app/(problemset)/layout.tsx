@@ -1,4 +1,4 @@
-import ProblemSetPageNavbar from "@/components/navbars/problemset-page-navbar/navbar";
+import ProblemSetPageNavbar from "@/components/problemset-page/navbar/navbar";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -13,12 +13,13 @@ export default async function ProblemSetLayout({
 }) {
   return (
     <div className="bg-backgroundBlack h-full">
-      <div className="bg-lightGray/50 py-2">
+      <div className="bg-lightGray/50 py-2 border-b-white/50 border-b">
         <ProblemSetPageNavbar />
       </div>
       {children}
     </div>
   );
 }
+
 
 

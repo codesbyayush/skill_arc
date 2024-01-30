@@ -57,7 +57,7 @@ export function NavMenu() {
     <NavigationMenu>
       <NavigationMenuList>
         <NavigationMenuItem>
-          <Link href="/problemset" legacyBehavior passHref>
+          <Link href="/" legacyBehavior passHref>
             <NavigationMenuLink
               className={cn(
                 navigationMenuTriggerStyle(),
@@ -70,7 +70,7 @@ export function NavMenu() {
         </NavigationMenuItem>
 
         <NavigationMenuItem>
-          <Link href="/problemset" legacyBehavior passHref>
+          <Link href="/" legacyBehavior passHref>
             <NavigationMenuLink
               className={cn(
                 navigationMenuTriggerStyle(),
@@ -82,7 +82,7 @@ export function NavMenu() {
           </Link>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <Link href="/problemset" legacyBehavior passHref>
+          <Link href="/" legacyBehavior passHref>
             <NavigationMenuLink
               className={cn(
                 navigationMenuTriggerStyle(),
@@ -94,7 +94,7 @@ export function NavMenu() {
           </Link>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <Link href="/problemset" legacyBehavior passHref>
+          <Link href="/" legacyBehavior passHref>
             <NavigationMenuLink
               className={cn(
                 navigationMenuTriggerStyle(),
@@ -161,8 +161,7 @@ export function NavMenu() {
             </ul>
           </NavigationMenuContent>
         </NavigationMenuItem> 
-        */
-       }
+        */}
       </NavigationMenuList>
     </NavigationMenu>
   );

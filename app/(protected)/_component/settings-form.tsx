@@ -95,7 +95,7 @@ function SettingsForm() {
 
           {!user?.isOAuth && (
             <>
-              <FormField
+              {/* <FormField
                 control={form.control}
                 name="email"
                 render={({ field }) => (
@@ -111,7 +111,7 @@ function SettingsForm() {
                     <FormMessage />
                   </FormItem>
                 )}
-              />
+              /> */}
               <FormField
                 control={form.control}
                 name="password"
@@ -149,7 +149,7 @@ function SettingsForm() {
             </>
           )}
 
-          <FormField
+          {/* <FormField
             control={form.control}
             name="role"
             render={({ field }) => (
@@ -173,7 +173,7 @@ function SettingsForm() {
                 <FormMessage />
               </FormItem>
             )}
-          />
+          /> */}
 
           {!user?.isOAuth && (
             <FormField

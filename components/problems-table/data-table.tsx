@@ -27,6 +27,7 @@ import {
 
 import { DataTablePagination } from "./data-table-pagination";
 import { DataTableToolbar } from "./data-table-toolbar";
+import Link from "next/link";
 
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
@@ -68,16 +69,20 @@ export function DataTable<TData, TValue>({
   });
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-4 border-none">
       <DataTableToolbar table={table} />
-      <div className="rounded-md border">
+      <div className="rounded-md border-none">
         <Table>
           <TableHeader>
             {table.getHeaderGroups().map((headerGroup) => (
               <TableRow key={headerGroup.id}>
                 {headerGroup.headers.map((header) => {
                   return (
-                    <TableHead key={header.id} colSpan={header.colSpan}>
+                    <TableHead
+                      key={header.id}
+                      colSpan={header.colSpan}
+                      className="text-lg text-custom-text-50 "
+                    >
                       {header.isPlaceholder
                         ? null
                         : flexRender(
@@ -92,17 +97,21 @@ export function DataTable<TData, TValue>({
           </TableHeader>
           <TableBody>
             {table.getRowModel().rows?.length ? (
-              table.getRowModel().rows.map((row) => (
+              table.getRowModel().rows.map((row, i) => (
                 <TableRow
                   key={row.id}
                   data-state={row.getIsSelected() && "selected"}
+                  className={`${i % 2 === 0 ? "bg-custom-secondary-800" : ""} border-none`}
                 >
                   {row.getVisibleCells().map((cell) => (
-                    <TableCell key={cell.id}>
-                      {flexRender(
-                        cell.column.columnDef.cell,
-                        cell.getContext()
-                      )}
+                    <TableCell
+                      key={cell.id}
+                      className="text-base text-custom-text-50 "
+                    >
+                        {flexRender(
+                          cell.column.columnDef.cell,
+                          cell.getContext()
+                        )}
                     </TableCell>
                   ))}
                 </TableRow>
@@ -111,7 +120,7 @@ export function DataTable<TData, TValue>({
               <TableRow>
                 <TableCell
                   colSpan={columns.length}
-                  className="h-24 text-center"
+                  className="h-24 text-center text-base"
                 >
                   No results.
                 </TableCell>

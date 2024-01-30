@@ -1,38 +1,25 @@
 import React from "react";
 import Examples from "@/components/problem-page/problem-desc-ui/examples";
 import Constraints from "@/components/problem-page/problem-desc-ui/constraints";
-import AboutProblem from "@/components/problem-page/problem-desc-ui/problem-about-section";
-import { Badge } from "@/components/ui/badge";
 import { getProblem } from "@/actions/problem/get-problem";
+import { problems } from "@/testdata/all-problems";
 
-type Props = {};
+type Props = { problem: problems }
 
-async function ProblemStatement({}: Props) {
-
-  const problem = await getProblem("two-sum", 2);
-
+async function ProblemStatement({ problem }: Props ) {
   return (
     <div className="h-full w-full px-4 py-5 bg-darkGray rounded overflow-y-scroll scrollbar-hide flex flex-col gap-5">
-      <h3 className="text-xl font-semibold">{problem?.title || "?"}</h3>
-      {/* <div className="flex gap-2 flex-wrap">
-        <Badge className="text-emerald-300">Easy</Badge>
-        <Badge>Topics</Badge>
-        <Badge>Companies</Badge>
-        <Badge>Hint</Badge>
-      </div> */}
+      <h3 className="text-xl font-semibold">{problem?.title || "Some Inconsistency found in data"}</h3>
       <div
         className="flex flex-col gap-2"
-        dangerouslySetInnerHTML={{__html: problem?.problemStatement}}
-      >
-        {/* Given an array of integers nums and an integer target, return indices of
-        the two numbers such that they add up to target.
-        <p></p>
-        You may assume that each input would have exactly one solution, and you
-        may not use the same element twice.
-        <p></p>
-        You can return the answer in any order. */}
-      </div>
-      <Examples />
+        dangerouslySetInnerHTML={{
+          __html: problem?.problemStatement
+            .split("\n")
+            .map((line) => `<p> ${line} </p>`)
+            .join(''),
+        }}
+      ></div>
+      <Examples examples={problem?.examples}/>
       <Constraints />
       {/* <p className="text-sm">
         <span className="font-semibold text-base">Follow-up :</span>
