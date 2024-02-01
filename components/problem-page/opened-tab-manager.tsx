@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import CodeEditor from "@/components/problem-page/code-editor";
 import SubmissionResult from "./submission-result";
 import Testcases from "./problem-desc-ui/testcases";
 

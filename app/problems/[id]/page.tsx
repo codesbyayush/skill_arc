@@ -10,7 +10,7 @@ export default async function Problem({ params } : { params: {id: string}}) {
   return (
     <main className="h-full flex flex-col w-screen bg-backgroundBlack px-2 py-1">
       <ProblemPageNavbar />
-      <ProblemsPage problem={problem as problems}/>
+      <ProblemsPage problem={problem as any}/>
     </main>
   );
 }

@@ -57,3 +57,13 @@ export const useResultStore = create<ResultStore>()((set) => ({
     set(() => ({ error: currentState })),
 }));
 
+type editorSettingStore = {
+  theme: string;
+  updateTheme: (theme: string) => void
+}
+
+export const useEditorSettingStore = create<editorSettingStore>()((set) => ({
+  theme: 'copilot',
+  updateTheme: (theme) => set(() => ({theme: theme}))
+}))
+
