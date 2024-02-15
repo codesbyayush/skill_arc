@@ -21,7 +21,6 @@ export const allProblems = {
         "Output: [1,2]",
         "Input: nums = [3,3], target = 6",
         "Output: [0,1]",
-        "",
       ],
       constraints: [
         "2 <= nums.length <= 104-109 <= nums[i] <= 109-109 <= target <= 109Only one valid answer exists.",
@@ -41,7 +40,6 @@ export const allProblems = {
         "Output: 21",
         "Input: x = 0",
         "Output: 0",
-        "",
       ],
       constraints: ["-231 <= x <= 231 - 1"],
     },
@@ -61,7 +59,6 @@ export const allProblems = {
         "Output: 0",
         "Input: nums = [1], target = 0",
         "Output: 0",
-        "",
       ],
       constraints: [
         "1 <= nums. length <= 104-104 <= nums[i] <= 104nums contains distinct values sorted in ascending order.-104 <= target <= 104",
@@ -78,7 +75,6 @@ export const allProblems = {
         "Explanation: The first two digits or the last three digits are consecutive 1s. The maximum number of consecutive 1s is 3.",
         "Input: nums = [1,0,1,1,0,1]",
         "Output: 2",
-        "",
       ],
       constraints: ["1 <= nums. length <= 105nums[i] is either 0 or 1."],
     },

@@ -14,7 +14,7 @@ function OpenedTab({ testcase }: { testcase: string }) {
           className="font-semibold px-4 py-1.5 bg-darkGray rounded w-min"
           onClick={() => setIsResultDisplayed(false)}
         >
-          Testcases
+          Input
         </Button>
         <Button
           className="font-semibold px-4 py-1.5 bg-darkGray rounded w-min"
@@ -23,7 +23,7 @@ function OpenedTab({ testcase }: { testcase: string }) {
           Result
         </Button>
       </div>
-      <div className="h-full w-full px-4 bg-darkGray rounded overflow-y-scroll scrollbar-hide min-h-0">
+      <div className="h-full w-full px-4 bg-darkGray rounded overflow-y-scroll   min-h-0">
         {isResultDisplayed ? (
           <SubmissionResult />
         ) : (

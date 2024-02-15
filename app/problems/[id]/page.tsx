@@ -1,7 +1,6 @@
 import { getProblemById } from "@/actions/problem/get-problem";
 import ProblemPageNavbar from "@/components/problem-page/navbar/problem-page-navbar";
 import ProblemsPage from "@/components/problem-page/problemspage";
-import { problems } from "@/testdata/all-problems";
 
 export default async function Problem({ params } : { params: {id: string}}) {
 

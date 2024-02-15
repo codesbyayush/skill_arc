@@ -14,9 +14,9 @@ function Testcases({ testcase } : {testcase? : string}) {
   return (
     <>
       <div className=" rounded-lg py-4">
-        <p className="py-4 font-semibold text-xl">Edit for custom testcases</p>
+        <p className="py-4 font-semibold text-xl">Edit for custom input</p>
         <Textarea
-          placeholder="Enter your custom testcase here"
+          placeholder="Enter your custom input here"
           className="resize-y min-h-40 text-lg font-medium"
           value={testcases}
           onChange={(e) => updateTestcases(e.target.value)}

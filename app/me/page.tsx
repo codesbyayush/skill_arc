@@ -8,7 +8,7 @@ import {
 import { AvatarImage, AvatarFallback, Avatar } from "@/components/ui/avatar";
 import { Label } from "@/components/ui/label";
 import { Checkbox } from "@/components/ui/checkbox";
-import SettingsForm from "../(protected)/_component/settings-form";
+import SettingsForm from "../../components/settings-form";
 import { Button } from "@/components/ui/button";
 import { HomeIcon } from "@radix-ui/react-icons";
 import { currentUser } from "@/lib/current-user-server";

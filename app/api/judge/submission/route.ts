@@ -1,7 +1,7 @@
-import { NextApiRequest } from "next";
-import { NextResponse } from "next/server";
 
-export async function POST(req: NextApiRequest) {
+import { NextResponse, NextRequest } from "next/server";
+
+export async function POST(req: NextRequest) {
   const url = "http://localhost:2358/submissions/?fields=*&wait=true";
   const dataObj = {
     language_id: 62,
@@ -34,7 +34,7 @@ export async function POST(req: NextApiRequest) {
   );
 }
 
-export async function GET(req: NextApiRequest) {
+export async function GET(req: NextRequest) {
   const url = "http://localhost:2358/languages";
   const options = {
     method: "GET",

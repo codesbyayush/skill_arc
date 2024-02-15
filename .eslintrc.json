@@ -1,15 +1,16 @@
 {
   "extends": [
-    "next/core-web-vitals","airbnb", "prettier", "plugin:node/recommended"],
+    "next/core-web-vitals", "prettier"],
   "plugins": ["prettier"],
   "rules": {
-    "prettier/prettier": "error",
+    "prettier/prettier": "warn",
     "no-unused-vars": "warn",
     "no-console": "off",
     "func-names": "off",
     "no-process-exit": "off",
     "object-shorthand": "off",
-    "class-methods-use-this": "off"
+    "class-methods-use-this": "off",
+    "no-trailing-spaces": "off",
   }
 }
 

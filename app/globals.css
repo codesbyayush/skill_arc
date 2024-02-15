@@ -2,11 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-html,
-body,
-:root {
-  height: 100%;
-}
 
 @layer base {
   :root {
@@ -212,14 +207,36 @@ body,
 * {
   min-width: 0;
 }
+
+
 body {
-  height: 100vh;
+  --sb-track-color: #292525;
+  --sb-thumb-color: #ceced8;
+  --sb-size: 1px;
 }
 
-.scrollbar-hide {
-  -ms-overflow-style: none; /* Internet Explorer 10+ */
-  scrollbar-width: none; /* Firefox */
+*::-webkit-scrollbar {
+  width: var(--sb-size)
 }
-.scrollbar-hide::-webkit-scrollbar {
-  display: none; /* Safari and Chrome */
+
+*::-webkit-scrollbar-track {
+  background: var(--sb-track-color);
+  border-radius: 10px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: var(--sb-thumb-color);
+  border-radius: 10px;
+  
+}
+
+@supports not selector(::-webkit-scrollbar) {
+  * {
+    scrollbar-color: var(--sb-thumb-color)
+                     var(--sb-track-color);
+  }
+}
+
+body {
+  height: 100svh;
 }

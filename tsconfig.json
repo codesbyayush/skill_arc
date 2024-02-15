@@ -28,7 +28,7 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "actions/auth/server-action-admin.ts"
-  ],
+, "app/playground/_components/theme.js"  ],
   "exclude": ["node_modules"]
 }
 

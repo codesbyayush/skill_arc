@@ -4,15 +4,12 @@ import {
   ResizablePanelGroup,
 } from "@/components/ui/resizable";
 import { Button } from "@/components/ui/button";
-import CodeEditor from "@/components/problem-page/code-editor";
 import ProblemStatement from "@/components/problem-page/problem-statement";
 import OpenedTab from "@/components/problem-page/opened-tab-manager";
 import { problems } from "@/testdata/all-problems";
+import Editor from "@/components/problem-page/Editor";
 
-export default async function ProblemsPage( { problem }: { problem : problems}) {
-
-  
-  
+export default async function ProblemsPage({ problem }: { problem: problems }) {
   return (
     <ResizablePanelGroup
       direction="horizontal"
@@ -25,10 +22,7 @@ export default async function ProblemsPage( { problem }: { problem : problems}) 
               Description
             </Button>
           </p>
-          <ProblemStatement problem={problem}/>
-          {/* <div className="rounded bg-darkGray py-2">
-            <DescriptionFooter />
-          </div> */}
+          <ProblemStatement problem={problem} />
         </div>
       </ResizablePanel>
       <ResizableHandle
@@ -44,8 +38,8 @@ export default async function ProblemsPage( { problem }: { problem : problems}) 
                   Code
                 </Button>
               </div>
-              <div className="h-full w-full bg-darkGray rounded overflow-y-scroll scrollbar-hide relative">
-                <CodeEditor />
+              <div className="h-full w-full bg-darkGray rounded overflow-y-scroll   relative">
+                <Editor />
               </div>
             </div>
           </ResizablePanel>
@@ -57,7 +51,7 @@ export default async function ProblemsPage( { problem }: { problem : problems}) 
 
           <ResizablePanel defaultSize={20} minSize={6}>
             <div className="flex h-full justify-center flex-col gap-y-1 rounded overflow-hidden min-h-0">
-              <OpenedTab testcase={''}/>
+              <OpenedTab testcase={""} />
             </div>
           </ResizablePanel>
         </ResizablePanelGroup>
