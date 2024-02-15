@@ -9,7 +9,6 @@ import { allProblems } from "@/testdata/corrected-examples";
 export const getProblem = async (
   slug: string,
 ) => {
-    if(slug !== 'two-sum')return { error: true, message: 'Problem not available at the moment'};
     return { success: true, ...twoSum };
 };
 

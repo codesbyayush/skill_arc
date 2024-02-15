@@ -23,14 +23,6 @@ async function ProblemStatement({ problem }: Props) {
       ></div>
       <Examples examples={problem?.examples} />
       <Constraints />
-      {/* <p className="text-sm">
-        <span className="font-semibold text-base">Follow-up :</span>
-        &nbsp;&nbsp; Can you come up with an algorithm that is less than O(n
-        <sup>2</sup>) time complexity?
-      </p> */}
-      <p />
-      {/* <hr /> */}
-      {/* <AboutProblem /> */}
     </div>
   );
 }

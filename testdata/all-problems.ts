@@ -2,7 +2,11 @@ export type problems = {
   id: string;
   title: string;
   problemStatement: string;
-  examples: string[];
+  examples: {
+    input?: string,
+    output?: string,
+    explanation?: string,
+  }[];
   constraints: string[];
 };
 

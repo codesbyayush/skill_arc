@@ -1,7 +1,9 @@
 "use client";
 
 import { ColumnDef } from "@tanstack/react-table";
-
+import {
+  ArrowDownIcon,
+} from "@radix-ui/react-icons";
 import { difficulty, statuses } from "./data/data";
 import { Task } from "./data/schema";
 import { DataTableColumnHeader } from "./data-table-column-header";
@@ -110,6 +112,7 @@ export const columns: ColumnDef<Task>[] = [
           label: 'Easy',
           value: 'easy',
           numVal: 1,
+          icon: ArrowDownIcon
         }
       }
 
@@ -120,8 +123,8 @@ export const columns: ColumnDef<Task>[] = [
               className="mr-2 h-4 w-4 text-muted-foreground"
             />
           )} */}
-          <span className={`${difficulties.color} text-lg`}>
-            {difficulties.label}
+          <span className={`${difficulties?.color} text-lg`}>
+            {difficulties?.label}
           </span>
         </div>
       );
