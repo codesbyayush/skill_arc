@@ -26,6 +26,8 @@ export const getSubmissionResult = async (
     const response = await fetch(url, options);
     const result = await response.json();
 
+    console.log(result)
+
     if (result?.compile_output)
       return { error: result.compile_output, ...result };
     if (result?.stderr) return { error: result.stderr, ...result };
@@ -34,6 +36,9 @@ export const getSubmissionResult = async (
     }
     return { success: result.stdout, ...result };
   } catch (error) {
+    
+    console.log(error); 
+
     return { error: "Sorry for the Inconvenience, some error from our side" };
   }
 };
