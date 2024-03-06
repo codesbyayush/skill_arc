@@ -12,6 +12,7 @@ function CodeEditorWindow() {
 
   const onSubmit = async () => {
     updateError(false);
+    updateResult("Execute the code to see the result");
     let res = await getSubmissionResult(code, testcases, 62);
     if (res.success) {
       toast.success("Congratulations", {

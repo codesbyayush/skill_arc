@@ -1,12 +1,12 @@
-import { SiLeetcode } from "react-icons/si";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import Logo from '@/components/icons/logo'
 
 function LogoButton() {
   return (
     <Link href={'/'}>
-      <Button className="bg-transparent">
-        <SiLeetcode className="h-5 w-5 hover:scale-105" />
+      <Button className="bg-transparent rounded">
+        <Logo />
       </Button>
     </Link>
   );

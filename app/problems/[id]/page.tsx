@@ -2,6 +2,8 @@ import { getProblemById } from "@/actions/problem/get-problem";
 import ProblemPageNavbar from "@/components/problem-page/navbar/problem-page-navbar";
 import ProblemsPage from "@/components/problem-page/problemspage";
 
+
+
 export default async function Problem({ params } : { params: {id: string}}) {
 
   const problem = await getProblemById(params.id)

@@ -7,9 +7,7 @@ function ProblemSetPageNavbar() {
     <div className="flex items-center justify-between  text-white px-2 max-w-[1800px] w-full mx-auto">
       <div className="flex items-center">
         <LogoButton />
-        <Button className="bg-trnsparent hover:bg-white/15">Explore</Button>
         <Button className="bg-trnsparent hover:bg-white/15">Problems</Button>
-        <Button className="bg-trnsparent hover:bg-white/15">Contest</Button>
         <Button className="bg-trnsparent hover:bg-white/15">Discuss</Button>
       </div>
       <div className="flex items-center justify-between gap-1">

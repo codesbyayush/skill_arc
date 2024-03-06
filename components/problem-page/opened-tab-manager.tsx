@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import SubmissionResult from "./submission-result";
 import Testcases from "./problem-desc-ui/testcases";
+import { cn } from "@/lib/utils";
 
 function OpenedTab({ testcase }: { testcase: string }) {
   const [isResultDisplayed, setIsResultDisplayed] = useState(false);
@@ -11,13 +12,13 @@ function OpenedTab({ testcase }: { testcase: string }) {
     <>
       <div className="px-2 py-1 bg-lightGray rounded flex gap-2">
         <Button
-          className="font-semibold px-4 py-1.5 bg-darkGray rounded w-min"
+          className={cn("font-semibold px-4 py-1.5 bg-darkGray rounded w-min", !isResultDisplayed && 'ring-1 ring-gray-500')}
           onClick={() => setIsResultDisplayed(false)}
         >
           Input
         </Button>
         <Button
-          className="font-semibold px-4 py-1.5 bg-darkGray rounded w-min"
+          className={cn("font-semibold px-4 py-1.5 bg-darkGray rounded w-min", isResultDisplayed && 'ring-1 ring-gray-500')}
           onClick={() => setIsResultDisplayed(true)}
         >
           Result
