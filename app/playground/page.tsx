@@ -10,6 +10,8 @@ import OpenedTab from "@/components/problem-page/opened-tab-manager";
 import Editor from "@/components/playground-page/editor-window";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
+import { LanguageSelector } from "@/components/test-components/language-selector";
+import EditorSettings from "@/components/test-components/editor-settings";
 
 export default function Playground() {
   const [collapsed, setCollapsed] = useState(false);
@@ -28,14 +30,13 @@ export default function Playground() {
     <>
       <ResizablePanelGroup
         direction="vertical"
-        className=" bg-custom-secondary-950 border-4 border-custom-secondary-950 text-white"
+        className=" dark:bg-darkGray bg-white border-4  text-white"
       >
-        <ResizablePanel defaultSize={90}>
+        <ResizablePanel defaultSize={90} minSize={40}>
           <div className="flex h-full justify-center  flex-col gap-y-1 rounded overflow-hidden">
-            <div className="px-2 py-1 bg-lightGray rounded flex gap-2">
-              <Button className="font-semibold px-4 py-1.5 bg-darkGray rounded w-min">
-                Code
-              </Button>
+            <div className="px-2 py-1 dark:bg-lightGray bg-gray-200 rounded flex gap-2 justify-between">
+              <LanguageSelector />
+              <EditorSettings />
             </div>
             <div className="h-full w-full bg-darkGray rounded overflow-y-scroll relative">
               <Editor />
@@ -60,7 +61,7 @@ export default function Playground() {
       </ResizablePanelGroup>
       {collapsed && (
         <Button
-          className="bg-lightGray hover:bg-backgroundBlack/50 absolute bottom-3.5 left-2.5"
+          className="dark:bg-lightGray bg-backgroundBlack/50 absolute bottom-4 left-2.5 text-black dark:text-white"
           onClick={() => consoleSize()}
         >
           Console

@@ -3,11 +3,11 @@
 export const getSubmissionResult = async (
   code: string,
   input?: string,
-  language?: number
+  language?: string
 ) => {
   const url = process.env.RAPID_API_URL! + "/submissions/?wait=true";
   const dataObj = {
-    language_id: 62,
+    language_id: language || '62',
     source_code: code,
     stdin: input,
   };

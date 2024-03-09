@@ -26,11 +26,11 @@ export default SubmissionResult
 const ErrorOccured = ({testResult} : { testResult: string}) => {
   return (
     <div className="py-6 flex flex-col gap-3">
-      <Badge variant={"destructive"} className="w-min whitespace-nowrap  text-sm">
+      <Badge variant={"destructive"} className="w-min whitespace-nowrap text-sm">
         {" "}
         Error occured{" "}
       </Badge>
-      <span className="bg-lightGray/20 px-6 py-6 rounded-lg font-semibold text-lg text-red-400">
+      <span className="dark:bg-lightGray/20 bg-lightGray/5 px-6 py-6 rounded-lg font-semibold text-lg text-red-400">
         Output : &nbsp; {testResult}
       </span>
     </div>
@@ -42,7 +42,7 @@ const Success = ({ testResult }: { testResult: string }) => {
   return (
     <div className="py-6 flex flex-col gap-3">
       <Badge variant={"default"} className="max-w-min bg-emerald-600 text-sm"> Success </Badge>
-      <span className="bg-lightGray/20 px-6 py-6 rounded-lg font-semibold text-lg">Output : &nbsp; {testResult.split('\n').map((val) => <p key={val}>{val}</p>)}</span>
+      <span className="dark:bg-lightGray/20 bg-lightGray/5 px-6 py-6 rounded-lg font-semibold text-lg">Output : &nbsp; {testResult.split('\n').map((val) => <p key={val}>{val}</p>)}</span>
     </div>
   );
 };

@@ -10,21 +10,23 @@ function OpenedTab({ testcase }: { testcase: string }) {
   const [isResultDisplayed, setIsResultDisplayed] = useState(false);
   return (
     <>
-      <div className="px-2 py-1 bg-lightGray rounded flex gap-2">
+      <div className="px-2 py-1 dark:bg-lightGray bg-zinc-200 rounded flex gap-2">
         <Button
-          className={cn("font-semibold px-4 py-1.5 bg-darkGray rounded w-min", !isResultDisplayed && 'ring-1 ring-gray-500')}
+          variant={'outline'}
+          className={cn("font-semibold px-4 py-1.5 dark:bg-darkGray text-black dark:text-white w-min ", !isResultDisplayed && 'ring-1 ring-gray-500')}
           onClick={() => setIsResultDisplayed(false)}
         >
           Input
         </Button>
         <Button
-          className={cn("font-semibold px-4 py-1.5 bg-darkGray rounded w-min", isResultDisplayed && 'ring-1 ring-gray-500')}
+          variant={'outline'}
+          className={cn("font-semibold px-4 py-1.5 dark:bg-darkGray text-black dark:text-white w-min ", isResultDisplayed && 'ring-1 ring-gray-500')}
           onClick={() => setIsResultDisplayed(true)}
         >
           Result
         </Button>
       </div>
-      <div className="h-full w-full px-4 bg-darkGray rounded overflow-y-scroll   min-h-0">
+      <div className="h-full w-full px-4 dark:bg-darkGray rounded overflow-y-scroll text-black dark:text-white   min-h-0">
         {isResultDisplayed ? (
           <SubmissionResult />
         ) : (

@@ -25,8 +25,8 @@ function ThemeChanger() {
     else setTheme("light");
   };
   return (
-    <Button onClick={changeTheme} className="px-2 bg-transparent py-0 ">
-      {theme === "light" ? <MdOutlineWbSunny className="h-6 w-6"/> : <FiMoon className="h-6 w-6 text-white"/>}
+    <Button onClick={changeTheme} variant={'outline'} className=" bg-transparent border-0 rounded-none">
+      {theme === "light" ? <MdOutlineWbSunny className="h-5 w-5 text-black"/> : <FiMoon className="h-5 w-5 text-white"/>}
     </Button>
   );
 }

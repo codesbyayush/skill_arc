@@ -1,3 +1,4 @@
+import { stcode } from "@/testdata/starterCode";
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
 
@@ -56,16 +57,39 @@ export const useResultStore = create<ResultStore>()((set) => ({
 type PlaygroundStore = {
   code: string;
   language: string;
-  update: (code: string, lang?: string) => void;
+  updateCode: (code: string, lang?: string) => void;
+  updateLang: (lang: string) => void;
 };
 
 export const usePlaygroundStore = create<PlaygroundStore>()(
   persist(
     (set) => ({
       code: starterCode,
-      language: "java",
-      update: (codes, lang) => set(() => ({ code: codes, language: lang })),
+      language: "91",
+      updateCode: (codes, lang) => set(() => ({ code: codes, language: lang })),
+      updateLang: (lang) => set(() => ({ language: lang, code: stcode[lang] })),
     }),
     { name: "playgroundCode" }
   )
 );
+
+
+
+type EditorSettingStore = {
+  fontsize: number;
+  tabsize: number;
+  updateEditorSettings: (fontsize: number, tabsize: number) => void;
+};
+
+export const useEditorSettingStore = create<EditorSettingStore>()(
+  persist(
+    (set) => ({
+      fontsize: 16,
+      tabsize: 4,
+      updateEditorSettings: (fontsize, tabsize) => set(() => ({ fontsize: fontsize, tabsize: tabsize })),
+    }),
+    { name: "editorSettings" }
+  )
+);
+
+
