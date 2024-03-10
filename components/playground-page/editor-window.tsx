@@ -15,7 +15,7 @@ function CodeEditorWindow() {
 
   const { theme } = useTheme();
 
-  const currentLang = (availableLanguages.filter(lang => lang.id === Number(language))[0].name.split(' ')[0].toLowerCase());
+  const currentLang = (availableLanguages.filter(lang => lang.id === Number(language))[0]?.name.split(' ')[0].toLowerCase());
 
 
   const onSubmit = async () => {
