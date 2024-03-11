@@ -25,7 +25,7 @@ function ThemeChanger() {
     else setTheme("light");
   };
   return (
-    <Button onClick={changeTheme} variant={'outline'} className=" bg-transparent border-0 rounded-none">
+    <Button onClick={changeTheme} variant={'outline'} className=" bg-transparent border-0 rounded-none hover:bg-transparent">
       {theme === "light" ? <MdOutlineWbSunny className="h-5 w-5 text-black"/> : <FiMoon className="h-5 w-5 text-white"/>}
     </Button>
   );

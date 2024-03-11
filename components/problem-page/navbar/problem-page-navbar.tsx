@@ -7,7 +7,7 @@ import UserProfileButton from "@/components/problemset-page/user-profile-button"
 function ProblemPageNavbar() {
   return (
     <div className="flex items-center justify-between  text-white px-2 ">
-      <div className="flex items-center">
+      <div className="flex items-center gap-2">
         <LogoButton />
         <ProblemsSidebar />
       </div>

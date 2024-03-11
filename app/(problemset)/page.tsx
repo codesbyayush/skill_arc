@@ -7,8 +7,8 @@ async function ProblemsSet() {
   const tasks = (await getAvailableProblems()).result;
 
   return (
-    <div className="p-6 bg-backgroundBlack text-white  max-w-[1800px] w-full mx-auto pt-24">
-      <div className="hidden h-full flex-1 flex-col space-y-8 px-2 py-6 md:flex  rounded-lg">
+    <div className="p-6 dark:bg-backgroundBlack bg-white  dark:text-white max-w-[1800px] w-full mx-auto pt-24">
+      <div className="hidden h-full flex-1 flex-col space-y-8 px-2 py-6 md:flex  rounded-lg ">
         <div className="flex items-center justify-between space-y-2">
           <div>
             <h2 className="text-2xl font-bold tracking-tight">Problems!</h2>

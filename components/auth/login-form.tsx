@@ -91,9 +91,10 @@ function LoginForm() {
                           placeholder="123456"
                           type="text"
                           disabled={isPending}
+                          className="border dark:border-white/20"
                         />
                       </FormControl>
-                      <FormMessage />
+                      <FormMessage className="dark:text-red-600" />
                     </FormItem>
                   )}
                 />
@@ -114,9 +115,10 @@ function LoginForm() {
                           placeholder="me@ayush.com"
                           type="email"
                           disabled={isPending}
+                          className="border dark:border-white/20"
                         />
                       </FormControl>
-                      <FormMessage />
+                      <FormMessage className="dark:text-red-600" />
                     </FormItem>
                   )}
                 />
@@ -132,12 +134,13 @@ function LoginForm() {
                           placeholder="********"
                           type="password"
                           disabled={isPending}
+                          className="border dark:border-white/20"
                         />
                       </FormControl>
                       <Button variant="link" className="px-0 ">
                         <Link href="/auth/reset">Forgot password?</Link>
                       </Button>
-                      <FormMessage />
+                      <FormMessage className="dark:text-red-600" />
                     </FormItem>
                   )}
                 />
@@ -147,7 +150,11 @@ function LoginForm() {
             <FormError message={error || urlError} />
             <FormSuccess message={success} />
           </div>
-          <Button type="submit" className="w-full" disabled={isPending}>
+          <Button
+            type="submit"
+            className="w-full dark:bg-white/90"
+            disabled={isPending}
+          >
             {showTwoFactor ? "Verify code" : "Login"}
           </Button>
         </form>

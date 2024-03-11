@@ -4,8 +4,8 @@ import Logo from '@/components/icons/logo'
 
 function LogoButton() {
   return (
-    <Link href={'/'}>
-      <Button className="bg-transparent rounded">
+    <Link href={'/'} >
+      <Button className="dark:bg-transparent dark:hover:bg-transparent hover:bg-white rounded bg-white">
         <Logo />
       </Button>
     </Link>

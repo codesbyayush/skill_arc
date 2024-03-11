@@ -19,7 +19,7 @@ export function ProblemsSidebar() {
     <>
       <Sheet key="left">
         <SheetTrigger asChild>
-          <Button className="text-base bg-transparent">
+          <Button className="text-base bg-white text-black dark:bg-transparent dark:text-white">
             <span>
               <AiOutlineMenuUnfold className="h-6 w-6 pr-2" />
             </span>
@@ -29,10 +29,10 @@ export function ProblemsSidebar() {
 
         <SheetContent
           side={"left"}
-          className="bg-darkGray text-white flex flex-col px-0 min-w-[50%] h-full pb-8"
+          className="dark:bg-darkGray dark:text-white flex flex-col px-0 min-w-[50%] h-full pb-8"
         >
           <SheetHeader>
-            <SheetTitle className="text-white px-6">
+            <SheetTitle className="dark:text-white px-6">
               Problem List{" "}
               <RiArrowDropRightLine className="inline h-7 w-7 align-top" />
             </SheetTitle>

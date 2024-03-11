@@ -12,14 +12,11 @@ export default async function ProblemSetLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="bg-backgroundBlack h-full min-h-svh w-full">
-      <div className="bg-lightGray/50 py-2 border-b-white/50 border-b mx-auto">
+    <div className="dark:bg-backgroundBlack  h-full min-h-svh w-full relative">
+      <div className="dark:bg-lightGray/50 py-2 border-b-white/50 border-b mx-auto sticky top-0 bg-gray-200">
         <ProblemSetPageNavbar />
       </div>
       {children}
     </div>
   );
 }
-
-
-

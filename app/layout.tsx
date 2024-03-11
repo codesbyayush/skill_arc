@@ -22,7 +22,7 @@ export default async function RootLayout({
 return (
   <SessionProvider session={session}>
     <html lang="en">
-      <body className={`${inter.className} bg-backgroundBlack`}>
+      <body className={`${inter.className} dark:bg-backgroundBlack bg-white`}>
         <Providers>
           <Toaster />
           {children}

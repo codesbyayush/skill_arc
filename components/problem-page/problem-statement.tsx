@@ -6,9 +6,9 @@ import { problems } from "@/testdata/all-problems";
 
 type Props = { problem: problems };
 
-async function ProblemStatement({ problem }: Props) {
+function ProblemStatement({ problem }: Props) {
   return (
-    <div className="h-full w-full px-4 py-5 bg-darkGray rounded overflow-y-scroll   flex flex-col gap-5">
+    <div className="h-full w-full px-4 py-5 dark:bg-darkGray bg-white rounded overflow-y-scroll flex flex-col gap-5 text-black dark:text-white">
       <h3 className="text-xl font-semibold">
         {problem?.title || "Some Inconsistency found in data"}
       </h3>
@@ -22,7 +22,7 @@ async function ProblemStatement({ problem }: Props) {
         }}
       ></div>
       <Examples examples={problem?.examples} />
-      <Constraints />
+      {/* <Constraints /> */}
     </div>
   );
 }

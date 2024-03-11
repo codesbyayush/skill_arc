@@ -3,13 +3,10 @@
 import Editor from "@monaco-editor/react";
 import { Button } from "@/components/ui/button";
 import { submitCode } from "@/actions/problem/submit-code";
-import {
-  starterCode,
-  useEditorStore,
-  useResultStore,
-} from "@/store/zustand";
+import { useEditorStore, useResultStore } from "@/store/zustand";
 import { useParams } from "next/navigation";
 import { toast } from "sonner";
+import CompleteEditor from "../editor";
 
 function CodeEditorWindow() {
   const { code, update } = useEditorStore();
@@ -36,41 +33,15 @@ function CodeEditorWindow() {
     }
   };
 
-  const persistCode = (code: string|undefined) => {
+  const persistCode = (code: string | undefined) => {
     if (params.id && code) {
       update(code, params.id as any);
     }
   };
 
- 
-  
-  
-
   return (
     <>
-      <Editor
-        language={"java"}
-        theme={'vs-dark'}
-        defaultValue="// some comment"
-        value={code}
-        height="100%"
-        width="100%"
-        onChange={persistCode}
-        options={{
-          cursorStyle: 'line-thin',
-          automaticLayout: true,
-          scrollbar: {
-            verticalScrollbarSize: 5,
-            verticalSliderSize: 5
-          },
-          minimap: {
-            autohide: true,
-          },
-          fontSize:18
-        }}
-        onMount={(editor) => editor.focus()}
-        className=""
-      />
+      <CompleteEditor code={code} persistCode={persistCode} />
       <div className="absolute bottom-0 right-0 flex gap-2 flex-wrap py-1 px-1">
         <Button
           className="bg-lightGray hover:bg-backgroundBlack/50"

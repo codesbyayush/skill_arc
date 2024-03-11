@@ -71,7 +71,7 @@ export function DataTable<TData, TValue>({
   return (
     <div className="space-y-4 border-none">
       <DataTableToolbar table={table} />
-      <div className="rounded-md border-none">
+      <div className="rounded-md border-none bg-gray-50 dark:bg-transparent">
         <Table>
           <TableHeader>
             {table.getHeaderGroups().map((headerGroup) => (
@@ -81,7 +81,7 @@ export function DataTable<TData, TValue>({
                     <TableHead
                       key={header.id}
                       colSpan={header.colSpan}
-                      className="text-lg text-custom-text-50 "
+                      className="text-lg py-2"
                     >
                       {header.isPlaceholder
                         ? null
@@ -101,12 +101,12 @@ export function DataTable<TData, TValue>({
                 <TableRow
                   key={row.id}
                   data-state={row.getIsSelected() && "selected"}
-                  className={`${i % 2 === 0 ? "bg-custom-secondary-800" : ""} border-none`}
+                  className={`${i % 2 === 0 ? "bg-custom-secondary-800 text-custom-text-50" : ""} border-none`}
                 >
                   {row.getVisibleCells().map((cell) => (
                     <TableCell
                       key={cell.id}
-                      className="text-base text-custom-text-50 "
+                      className="text-base "
                     >
                         {flexRender(
                           cell.column.columnDef.cell,

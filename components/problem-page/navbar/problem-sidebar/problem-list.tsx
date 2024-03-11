@@ -7,11 +7,11 @@ import { getAvailableProblems } from "@/actions/problem/get-available-problems";
 import { problems } from "@/testdata/all-problems";
 
 async function ProblemsList() {
-      const problems = await getAvailableProblems(); 
-      return (
-      <ScrollArea className="h-full w-full rounded-md border">
-        {problems.result.map((problem: problems, i: number) => {
-          if (i < 50)
+  const problems = await getAvailableProblems();
+  return (
+    <ScrollArea className="h-full w-full rounded-md border dark:border-white/70 ">
+      {problems.result.map((problem: problems, i: number) => {
+        if (i < 50)
           return (
             <>
               <Link
@@ -25,22 +25,19 @@ async function ProblemsList() {
                       i === 0 ? "bg-white/25" : "bg-transparent"
                     }`}
                   >
-                    <span className="truncate text-xs max-w-[60%]">
+                    <span className="truncate text-xs max-w-[60%] text-black dark:text-white">
                       {i + 1}. {problem.title}
                     </span>
-                    <span>Easy</span>
+                    <span className="text-emerald-500">Easy</span>
                   </div>
                 </Button>
               </Link>
               <Separator className="bg-white/15" />
             </>
           );
-        })}
-      </ScrollArea>
+      })}
+    </ScrollArea>
   );
 }
 
 export default ProblemsList;
-
-
-

@@ -10,15 +10,17 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { usePlaygroundStore } from "@/store/zustand";
+import { useEditorSettingStore, usePlaygroundStore } from "@/store/zustand";
 
 import { availableLanguages } from "@/testdata/langs-available";
 
 export function LanguageSelector() {
   const { updateLang, language } = usePlaygroundStore();
+  const { updateLang: editorLang } = useEditorSettingStore();
 
   function changeSeen(lang: string) {
     updateLang(lang);
+    editorLang(lang);
   }
 
   return (
@@ -28,7 +30,7 @@ export function LanguageSelector() {
       </SelectTrigger>
       <SelectContent className="dark:bg-darkGray dark:text-white">
         <SelectGroup>
-          {availableLanguages.map(({id, name}) => (
+          {availableLanguages.map(({ id, name }) => (
             <SelectItem value={String(id)} className="capitalize" key={id}>
               {name}
             </SelectItem>

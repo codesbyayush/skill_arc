@@ -1,22 +1,14 @@
-"use client"
+"use client";
 
-import Editor from "@monaco-editor/react";
 import { Button } from "@/components/ui/button";
-import { useEditorSettingStore, usePlaygroundStore, useResultStore } from "@/store/zustand";
+import { usePlaygroundStore, useResultStore } from "@/store/zustand";
 import { toast } from "sonner";
 import { getSubmissionResult } from "@/actions/submission/playground";
-import { useTheme } from "next-themes";
-import { availableLanguages } from "@/testdata/langs-available";
+import CompleteEditor from "../editor";
 
 function CodeEditorWindow() {
   const { code, updateCode, language } = usePlaygroundStore();
-  const { testcases, updateError, updateResult, codeExecuted } = useResultStore();
-  const { fontsize, tabsize } = useEditorSettingStore();
-
-  const { theme } = useTheme();
-
-  const currentLang = (availableLanguages.filter(lang => lang.id === Number(language))[0]?.name.split(' ')[0].toLowerCase());
-
+  const { testcases, updateError, updateResult } = useResultStore();
 
   const onSubmit = async () => {
     updateError(false);
@@ -46,34 +38,7 @@ function CodeEditorWindow() {
 
   return (
     <>
-      <Editor
-        language={currentLang !== 'c++' ? currentLang : 'cpp'}
-        theme={theme === 'light' ? 'vs' : 'vs-dark'}
-        defaultValue="// some comment"
-        value={code}
-        height="100%"
-        width="100%"
-        onChange={(codes) => persistCode(codes)}
-        options={{
-          cursorStyle: 'line-thin',
-          automaticLayout: true,
-          scrollbar: {
-            verticalScrollbarSize: 5,
-            verticalSliderSize: 5
-          },
-          minimap: {
-            autohide: true,
-          },
-          fontSize: fontsize,
-          tabSize: tabsize,
-          dragAndDrop: true,
-          formatOnPaste: true,
-          wordBasedSuggestions: 'currentDocument',
-          wordWrap: 'on'
-        }}
-        onMount={(editor) => editor.focus()}
-        className="h-[100vh]"
-      />
+      <CompleteEditor code={code} persistCode={persistCode} />
       <div className="absolute bottom-0 right-0 flex gap-2 flex-wrap py-1 px-1">
         <Button
           className="dark:bg-lightGray bg-backgroundBlack/50 dark:text-white text-black"

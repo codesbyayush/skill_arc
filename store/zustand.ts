@@ -52,8 +52,6 @@ export const useResultStore = create<ResultStore>()((set) => ({
   updateError: (currentState) => set(() => ({ error: currentState })),
 }));
 
-
-
 type PlaygroundStore = {
   code: string;
   language: string;
@@ -73,12 +71,12 @@ export const usePlaygroundStore = create<PlaygroundStore>()(
   )
 );
 
-
-
 type EditorSettingStore = {
   fontsize: number;
   tabsize: number;
   updateEditorSettings: (fontsize: number, tabsize: number) => void;
+  language: string;
+  updateLang: (lang: string) => void;
 };
 
 export const useEditorSettingStore = create<EditorSettingStore>()(
@@ -86,10 +84,11 @@ export const useEditorSettingStore = create<EditorSettingStore>()(
     (set) => ({
       fontsize: 16,
       tabsize: 4,
-      updateEditorSettings: (fontsize, tabsize) => set(() => ({ fontsize: fontsize, tabsize: tabsize })),
+      updateEditorSettings: (fontsize, tabsize) =>
+        set(() => ({ fontsize: fontsize, tabsize: tabsize })),
+      language: "91",
+      updateLang: (lang) => set(() => ({ language: lang })),
     }),
     { name: "editorSettings" }
   )
 );
-
-

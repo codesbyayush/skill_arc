@@ -7,7 +7,7 @@ export const getSubmissionResult = async (
 ) => {
   const url = process.env.RAPID_API_URL! + "/submissions/?wait=true";
   const dataObj = {
-    language_id: language || '62',
+    language_id: language || "62",
     source_code: code,
     stdin: input,
   };
@@ -26,7 +26,7 @@ export const getSubmissionResult = async (
     const response = await fetch(url, options);
     const result = await response.json();
 
-    console.log(result)
+    console.log(result);
 
     if (result?.compile_output)
       return { error: result.compile_output, ...result };
@@ -36,9 +36,6 @@ export const getSubmissionResult = async (
     }
     return { success: result.stdout, ...result };
   } catch (error) {
-    
-    console.log(error); 
-
     return { error: "Sorry for the Inconvenience, some error from our side" };
   }
 };

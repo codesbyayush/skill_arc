@@ -68,9 +68,10 @@ function RegisterForm() {
                       placeholder="Ayush..."
                       type="text"
                       disabled={isPending}
+                      className="border dark:border-white/20"
                     />
                   </FormControl>
-                  <FormMessage />
+                  <FormMessage className="dark:text-red-600" />
                 </FormItem>
               )}
             />
@@ -86,9 +87,10 @@ function RegisterForm() {
                       placeholder="me@ayush.com"
                       type="email"
                       disabled={isPending}
+                      className="border dark:border-white/20"
                     />
                   </FormControl>
-                  <FormMessage />
+                  <FormMessage className="dark:text-red-600" />
                 </FormItem>
               )}
             />
@@ -104,9 +106,10 @@ function RegisterForm() {
                       placeholder="********"
                       type="password"
                       disabled={isPending}
+                      className="border dark:border-white/20"
                     />
                   </FormControl>
-                  <FormMessage />
+                  <FormMessage className="dark:text-red-600" />
                 </FormItem>
               )}
             />
