@@ -10,12 +10,12 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { useEditorSettingStore, usePlaygroundStore } from "@/store/zustand";
+import { useEditorSettingStore, useEditorStore } from "@/store/zustand";
 
 import { availableLanguages } from "@/testdata/langs-available";
 
 export function LanguageSelector() {
-  const { updateLang, language } = usePlaygroundStore();
+  const { updateLang, language } = useEditorStore();
   const { updateLang: editorLang } = useEditorSettingStore();
 
   function changeSeen(lang: string) {

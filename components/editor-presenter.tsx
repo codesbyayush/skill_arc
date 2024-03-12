@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import {
   ResizableHandle,
@@ -13,9 +13,7 @@ import { useState } from "react";
 import { LanguageSelector } from "@/components/test-components/language-selector";
 import EditorSettings from "@/components/test-components/editor-settings";
 
-
-
-export default function Playground() {
+export default function EditorPresenter() {
   const [collapsed, setCollapsed] = useState(false);
   const [collapsedSize, setCollapsedSize] = useState(0);
 
@@ -36,7 +34,7 @@ export default function Playground() {
       >
         <ResizablePanel defaultSize={90} minSize={40}>
           <div className="flex h-full justify-center  flex-col gap-y-1 rounded overflow-hidden">
-            <div className="px-2 py-1 dark:bg-lightGray bg-gray-200 rounded flex gap-2 justify-between">
+            <div className="px-2 py-1 dark:bg-lightGray  bg-darkGray/25 rounded flex gap-2 justify-between">
               <LanguageSelector />
               <EditorSettings />
             </div>

@@ -1,18 +1,17 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { usePlaygroundStore, useResultStore } from "@/store/zustand";
+import { useResultStore, useEditorStore } from "@/store/zustand";
 import { toast } from "sonner";
 import { getSubmissionResult } from "@/actions/submission/playground";
 import CompleteEditor from "../editor";
 
 function CodeEditorWindow() {
-  const { code, updateCode, language } = usePlaygroundStore();
+  const { code, updateCode, language } = useEditorStore();
   const { testcases, updateError, updateResult } = useResultStore();
 
   const onSubmit = async () => {
     updateError(false);
-    // updateResult("Execute the code to see the result");
     let res = await getSubmissionResult(code, testcases, language);
     if (res.success) {
       toast.success("Congratulations", {

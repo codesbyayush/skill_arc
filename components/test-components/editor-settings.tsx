@@ -17,31 +17,20 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Label } from "@/components/ui/label";
-import { useEditorSettingStore, useEditorStore } from "@/store/zustand";
+import { useEditorSettingStore } from "@/store/zustand";
 import { IoSettingsOutline } from "react-icons/io5";
 import ThemeChanger from "@/components/theme-changer";
-import { usePlaygroundStore } from "@/store/zustand";
-import { stcode } from "@/testdata/starterCode";
 import ResetCode from "./reset-code";
 
 const availFontsizes = [12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24];
 const availTabsizes = [2, 3, 4];
 
-function EditorSettings({ pageType = "playground" }: { pageType?: string }) {
-  // const currentStore =
-  //   pageType === "playground" ? usePlaygroundStore() : useEditorStore();
-
-  const { language, updateCode } = usePlaygroundStore();
+function EditorSettings() {
   const { fontsize, tabsize, updateEditorSettings } = useEditorSettingStore();
-
-  const resetCode = () => {
-    const newcode = stcode[language];
-    updateCode(newcode, language);
-  };
 
   return (
     <div className="dark:bg-darkGray bg-white flex h-full items-center rounded overflow-hidden">
-      <ResetCode resetCode={resetCode} />
+      <ResetCode />
       <div className="dark:bg-darkGray bg-white gap-4 flex h-full items-center rounded">
         <Dialog>
           <DialogTrigger asChild>
