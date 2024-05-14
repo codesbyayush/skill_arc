@@ -19,9 +19,6 @@ export const allProblems = {
           input: " nums = [3,3], target = 6",
           output: " [0,1]",
         },
-        {
-          input: "",
-        },
       ],
       constraints: [
         "2 <= nums.length <= 104-109 <= nums[i] <= 109-109 <= target <= 109Only one valid answer exists.",
@@ -48,9 +45,6 @@ export const allProblems = {
         {
           input: " x = 0",
           output: " 0",
-        },
-        {
-          input: "",
         },
       ],
       constraints: ["-231 <= x <= 231 - 1"],

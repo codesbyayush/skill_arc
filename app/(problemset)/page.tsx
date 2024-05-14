@@ -1,9 +1,8 @@
-import { DataTable } from '@/components/problems-table/data-table';
-import  { columns } from '@/components/problems-table/columns'
-import { getAvailableProblems } from '@/actions/problem/get-available-problems';
+import { DataTable } from "@/components/problems-table/data-table";
+import { columns } from "@/components/problems-table/columns";
+import { getAvailableProblems } from "@/actions/problem/get-available-problems";
 
 async function ProblemsSet() {
-
   const tasks = (await getAvailableProblems()).result;
 
   return (
@@ -17,7 +16,7 @@ async function ProblemsSet() {
             </p>
           </div>
         </div>
-        <div className='max-w-[1800px] w-full mx-auto'>
+        <div className="max-w-[1800px] w-full mx-auto">
           <DataTable data={tasks} columns={columns} />
         </div>
       </div>

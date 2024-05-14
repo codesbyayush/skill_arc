@@ -10,7 +10,7 @@ function Examples({
   return (
     <div className="flex flex-col gap-3">
       {examples.map((example, index) => {
-        if (example?.input) return null;
+        if (!example?.input) return null;
         return (
           <div key={example?.input as string}>
             <p className="font-semibold pb-2">Example {index + 1}:</p>

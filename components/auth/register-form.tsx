@@ -41,7 +41,7 @@ function RegisterForm() {
     startTransition(() => {
       register(values).then((res) => {
         setError(res.error);
-        setSuccess(res.success);
+        // setSuccess(res.success);
       });
     });
   };
