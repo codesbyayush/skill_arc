@@ -5,7 +5,7 @@ import {
 } from "@/components/ui/resizable";
 import { Button } from "@/components/ui/button";
 import ProblemStatement from "@/components/problem-page/problem-statement";
-import { problems } from "@/testdata/all-problems";
+import { problems } from "@/testdata/corrected-examples";
 import EditorPresenter from "../editor-presenter";
 
 export default async function ProblemsPage({ problem }: { problem: problems }) {

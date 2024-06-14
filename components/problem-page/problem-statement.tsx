@@ -1,8 +1,7 @@
 import React from "react";
 import Examples from "@/components/problem-page/problem-desc-ui/examples";
 import Constraints from "@/components/problem-page/problem-desc-ui/constraints";
-import { getProblem } from "@/actions/problem/get-problem";
-import { problems } from "@/testdata/all-problems";
+import { problems } from "@/testdata/corrected-examples";
 
 type Props = { problem: problems };
 

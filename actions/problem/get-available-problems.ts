@@ -1,6 +1,6 @@
 "use server";
 
-import { allProblems } from "@/testdata/all-problems";
+import { allProblems } from "@/testdata/corrected-examples";
 
 export const getAvailableProblems = async () => {
   const arr: problemDetails = [];

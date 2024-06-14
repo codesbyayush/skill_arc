@@ -48,10 +48,6 @@ export const availableLanguages = [
     //   "name": "Swift (5.2.3)"
     // },
     // {
-    //   "id": 74,
-    //   "name": "TypeScript (3.7.4)"
-    // },
-    // {
     //   "id": 94,
     //   "name": "TypeScript (5.0.3)"
     // }

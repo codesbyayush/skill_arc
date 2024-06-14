@@ -4,14 +4,13 @@ import Link from "next/link";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Separator } from "@/components/ui/separator";
 import { getAvailableProblems } from "@/actions/problem/get-available-problems";
-import { problems } from "@/testdata/all-problems";
+import { problems } from "@/testdata/corrected-examples";
 
 async function ProblemsList() {
-  const problems = await getAvailableProblems();
+  const problems = (await getAvailableProblems()).result.filter((_: problems, ind:number) => ind < 50 );
   return (
     <ScrollArea className="h-full w-full rounded-md border dark:border-white/70 ">
-      {problems.result.map((problem: problems, i: number) => {
-        if (i < 50)
+      {problems.map((problem: problems, i: number) => {
           return (
             <>
               <Link
